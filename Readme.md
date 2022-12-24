@@ -57,7 +57,7 @@ Cuentan con 4 campos a llenar (name, condición,Effect y description)
 Name y description como en los casos anteriores son cadenas de texto 
 El campo condición recibe información que ha de poder ser interpretada como una proposición o expresión con un valor de verdad. Para esto el usuario cuenta con un conjunto de elementos e instrucciones que el compilador es capaz de leer.
 
-### Literales (true, false)
+Literales (true, false)
 
 Comparaciones entre enteros o expresiones que hagan referencia a un entero (la vida de los jugadores se entiende como Own o Adversary (que hacen referencia a el jugador que invoca la carta o su contrario) seguido de .Life para hacer referencia a la vida del jugador en cuestion)
 
