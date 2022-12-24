@@ -1,0 +1,1 @@
+@Algorithm@DES@8@Es el algoritmo simétrico más extendido mundialmente. Codifica bloques de 64 bits empleando claves de 56 bits

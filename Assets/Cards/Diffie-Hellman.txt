@@ -1,0 +1,1 @@
+@Algorithm@Diffie-Hellman@10@Se emplea fundamentalmente para acordar una clave común entre dos interlocutores, a través de un canal de comunicación inseguro. 

@@ -1,0 +1,1 @@
+@EffectOverField@POV@Own.Life < Adversary.Life@Change_HackerField;Change_AlgorithmField@Intercambia tu punto de vista por el de tu adversario si tu vida es menor que la suya

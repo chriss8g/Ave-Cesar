@@ -1,0 +1,1 @@
+@Algorithm@Cifrado Monoalfabetico@6@Sustituyen cada letra por otra que ocupa la misma posición en un alfabeto desordenado y esta correspondencia se mantiene a lo largo de todo el mensaje

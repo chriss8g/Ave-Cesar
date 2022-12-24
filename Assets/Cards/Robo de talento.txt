@@ -1,0 +1,1 @@
+@EffectOverCard@Robo de talento@Exist_Own_HackerField_Card = EmptySpace@Victim_ChangeField@Cambia la carta Victima de campo si hay un espacio vacio en el campo de hackers del jugador
