@@ -1,0 +1,1 @@
+@EffectOverCard@Chocolate@true@Victim_UploadCoefficient_6@Aumenta el coeficiente de la carta Victima

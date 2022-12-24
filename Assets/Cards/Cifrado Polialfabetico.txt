@@ -1,0 +1,1 @@
+@Algorithm@Cifrado Polialfabetico@6@Corresponde a la aplicación cíclica de n cifrados monoalfabéticos, (de varios abecedarios desordenados)

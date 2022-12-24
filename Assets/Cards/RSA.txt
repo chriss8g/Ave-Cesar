@@ -1,0 +1,1 @@
+@Algorithm@RSA@15@Se basa en la dificultad para factorizar grandes números. El atacante se enfrentará a un problema de factorización

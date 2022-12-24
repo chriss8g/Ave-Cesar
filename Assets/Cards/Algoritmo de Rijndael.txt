@@ -1,0 +1,1 @@
+@Algorithm@Algoritmo de Rijndael@10@Este algoritmo se adoptó oficialmente en octubre del 2000 como nuevo Estándar Avanzado de Cifrado (AES) por el NIST (National Institute for Standards and Technology) para su empleo en aplicaciones criptográficas

@@ -1,0 +1,1 @@
+@EffectOverField@Barrido@true@Sweep_Algorithms_Adversary;Sweep_Hackers_Adversary@Esta carta barre los campos de tu adversario
