@@ -82,7 +82,8 @@ Qué puede leerse como una condición?
 * Literales: true, false 
 * Comparaciones: se entiende como la relación de dos enteros por un operador (<, >, =) y la sintaxis apropiada para eso es entero1 (espacio) operador (espacio) entero2
 * Predicados: Para Todo y Existe (como en lógica). La sintaxis de los mismos se explica mejor en la siguiente tabla
-![Acaso borró la imagen de la carpeta?](./tabla3.png)
+
+  ![Acaso borró la imagen de la carpeta?](./tabla3.png)
 
 Un predicado encabezado con un ForAll (Para Todo) es verdadero si la condición expuesta se cumple para todos los elementos del campo en cuestión.
 Un predicado encabezado por un Exist (Existe) es verdadero si la condición es verdadera para al menos un elemento del campo en cuestión
