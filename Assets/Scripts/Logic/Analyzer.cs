@@ -27,6 +27,11 @@ namespace BattleCards
                 if (components[0] == "LowerLife")
                 // identifica la funcion LowerLife y busca sus parametros
                 {
+                    if (components.Length > 3)
+                    // si la cantidad de parametros es mayor que la que recibe la funcion lanza una excepcion
+                    {
+                        throw new SyntaxError();
+                    }
                     if (!((components[1] == "Own") || (components[1] == "Adversary")))
                     {
                         throw new SyntaxError();
@@ -43,6 +48,10 @@ namespace BattleCards
                 }
                 if (components[0] == "UploadLife")
                 {
+                    if (components.Length > 3)
+                    {
+                        throw new SyntaxError();
+                    }
                     if (!((components[1] == "Own") || (components[1] == "Adversary")))
                     {
                         throw new SyntaxError();
@@ -57,6 +66,10 @@ namespace BattleCards
                 }
                 if (components[0] == "Change")
                 {
+                    if (components.Length > 2)
+                    {
+                        throw new SyntaxError();
+                    }
                     if (components[1] == "HackerField")
                     {
                         Function += BasicMethods.Change<Hacker>;
@@ -64,10 +77,6 @@ namespace BattleCards
                     else if (components[1] == "AlgorithmField")
                     {
                         Function += BasicMethods.Change<Algorithm>;
-                    }
-                    else if (components[1] == "AllFileds")
-                    {
-                        Function += BasicMethods.Change<Card>;
                     }
                     else 
                     {
@@ -77,6 +86,10 @@ namespace BattleCards
                 }
                 if (components[0] == "Capacity")
                 {
+                    if (components.Length > 3)
+                    {
+                        throw new SyntaxError();
+                    }
                     if (!((components[1] == "Own") || (components[1] == "Adversary")))
                     {
                         throw new SyntaxError();
@@ -91,6 +104,10 @@ namespace BattleCards
                 }
                 if (components[0] == "Resistance")
                 {
+                    if (components.Length > 3)
+                    {
+                        throw new SyntaxError();
+                    }
                     if (!((components[1] == "Own") || (components[1] == "Adversary")))
                     {
                         throw new SyntaxError();
@@ -105,7 +122,11 @@ namespace BattleCards
                 }
                 if (components[0] == "Sweep")
                 {
-                    if (!((components[1] == "Hackers") || (components[1] == "Algorithms") || (components[1] == "All")))
+                    if (components.Length > 3)
+                    {
+                        throw new SyntaxError();
+                    }
+                    if (!((components[1] == "Hackers") || (components[1] == "Algorithms")))
                     {
                         throw new SyntaxError();
                     }
@@ -126,14 +147,6 @@ namespace BattleCards
                         void function()
                         {
                             BasicMethods.Kill<Algorithm>(components[2] == "Own" ? 0 : 1);
-                        }
-                        Function += function;
-                    }
-                    if (components[1] == "All")
-                    {
-                        void function()
-                        {
-                            BasicMethods.Kill<Card>(components[2] == "Own" ? 0 : 1);
                         }
                         Function += function;
                     }
@@ -168,6 +181,10 @@ namespace BattleCards
                 }
                 if (components[1] == "ChangeField")
                 {
+                    if (components.Length > 2)
+                    {
+                        throw new SyntaxError();
+                    }
                     void function<T>(T Victim) where T : Card
                     {
                         BasicMethods.ChangeField<T>(Victim);
@@ -177,6 +194,10 @@ namespace BattleCards
                 }
                 if (components[1] == "Kill")
                 {
+                    if (components.Length > 2)
+                    {
+                        throw new SyntaxError();
+                    }
                     void function<T>(T Victim) where T : Card
                     {
                         BasicMethods.Kill<T>(Victim);
@@ -186,6 +207,10 @@ namespace BattleCards
                 }
                 if (components[1] == "LowerCoefficient")
                 {
+                    if (components.Length > 3)
+                    {
+                        throw new SyntaxError();
+                    }
                     int n = Reader.Value(components[2]);
                     void function<T>(T Victim) where T : Card
                     {
@@ -196,6 +221,10 @@ namespace BattleCards
                 }
                 if (components[1] == "UploadCoefficient")
                 {
+                    if (components.Length > 3)
+                    {
+                        throw new SyntaxError();
+                    }
                     int n = Reader.Value(components[2]);
                     void function<T>(T Victim) where T : Card
                     {

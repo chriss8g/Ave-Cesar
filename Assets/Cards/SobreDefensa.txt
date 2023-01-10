@@ -1,0 +1,1 @@
+@EffectOverField@SobreDefensa@Exist_Adversary_AlgorithmField_Card.Resistance > 0@LowerLife_Adversary_10@Si el adversario tiene al menos una carta algoritmo en su campo, su vida disminuira en 10 

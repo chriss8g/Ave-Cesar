@@ -1,0 +1,1 @@
+@EffectOverCard@Perita un trabajador@true@Victim_LowerCoefficient_15@Disminuye el coeficiente de una carta en 15 puntos. Note que se puede volver negativa

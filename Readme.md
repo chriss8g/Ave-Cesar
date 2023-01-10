@@ -25,7 +25,7 @@ El panel inferior constituye las cartas que tiene el jugador. Como máximo este 
 
 ### Las cartas
 
-Nuestro juego cuenta con tres tipos de cartas: Hackers, Algoritmos y cartas de efecto especial. Las primeras son las encargadas directas de disminuir la cantidad de información encriptada del adversario mediante su propiedad capacidad. Al pasar el cursor por encima de una carta se muestra una ampliación de la misma en el lado izquierdo del campo y un panel con una descripción para esta en el lado derecho, en la primera línea de la información estará reflejada la capacidad. Los Algoritmos funcionarán como la antítesis de los Hackers, siendo, la defensa de tu información, su misión principal; estos cuentan con una resistencia, la cual será el valor que afectarán los hackers al no poder afectar tu información.
+Nuestro juego cuenta con tres tipos de cartas: Hackers, Algoritmos y cartas de efecto especial. Las primeras son las encargadas directas de disminuir la cantidad de información encriptada del adversario mediante su propiedad capacidad. Este tipo de cartas permanece en el campo por tres turnos. Al pasar el cursor por encima de una carta se muestra una ampliación de la misma en el lado izquierdo del campo y un panel con una descripción para esta en el lado derecho, en la primera línea de la información estará reflejada la capacidad. Los Algoritmos funcionarán como la antítesis de los Hackers, siendo, la defensa de tu información, su misión principal; estos cuentan con una resistencia, la cual será el valor que afectarán los hackers al no poder afectar tu información.
 
 ![Acaso borró la imagen de la carpeta?](./Description.png)
 
@@ -64,11 +64,11 @@ Cuenta con cuatro campos a llenar:
 * Effect: este tipo de carta se divide en dos grandes grupos
   * EffectOverCard: este efecto se aplicará sobre una carta víctima que será escogida en tiempo de juego
   * EffectOverField: este efecto afecta al estado del juego en general
+
 Estos efectos son elaborados a partir de funciones que el compilador es capaz de leer,
 las funciones a utilizar en cada caso son las siguientes:
         ![Acaso borró la imagen de la carpeta?](./tabla1.png)
-
-    ![Acaso borró la imagen de la carpeta?](./tabla2.png)
+  ![Acaso borró la imagen de la carpeta?](./tabla2.png)
 
 Una carta puede realizar no solo una acción para esto se concatenan mediante el caracter ; las acciones a ejecutar por la carta.
 
@@ -83,11 +83,14 @@ Qué puede leerse como una condición?
 * Comparaciones: se entiende como la relación de dos enteros por un operador (<, >, =) y la sintaxis apropiada para eso es entero1 (espacio) operador (espacio) entero2
 * Predicados: Para Todo y Existe (como en lógica). La sintaxis de los mismos se explica mejor en la siguiente tabla
 
-  ![Acaso borró la imagen de la carpeta?](./tabla3.png)
+    ![Acaso borró la imagen de la carpeta?](./tabla3.png)
 
 Un predicado encabezado con un ForAll (Para Todo) es verdadero si la condición expuesta se cumple para todos los elementos del campo en cuestión.
-Un predicado encabezado por un Exist (Existe) es verdadero si la condición es verdadera para al menos un elemento del campo en cuestión
+
+Un predicado encabezado por un Exist (Existe) es verdadero si la condición es verdadera para al menos un elemento del campo en cuestión.
+
 Estas operaciones pueden combinarse con los operadores and y or y ser agrupadas por parentesis (siempre dejando espacios)
+
 Ejemplo:
 5 > 4 and ( true or ForAll_Own_AlgorithmField_Card.Resistance > 6 )
 

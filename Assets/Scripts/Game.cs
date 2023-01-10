@@ -15,10 +15,10 @@ public class Game : MonoBehaviour
         WinConditions();
     }
     public void ChangeLife()
-    {   
+    {
         //actualiza las barras de vida(el +70 de al final es para ajustar el canvas)
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Health>().curHealth = BattleCards.Game.players[0].myLife.life +70;
-        GameObject.FindGameObjectWithTag("Player2").GetComponent<Health>().curHealth = BattleCards.Game.players[1].myLife.life +70;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Health>().curHealth = BattleCards.Game.players[0].myLife.life + 70;
+        GameObject.FindGameObjectWithTag("Player2").GetComponent<Health>().curHealth = BattleCards.Game.players[1].myLife.life + 70;
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ public class Game : MonoBehaviour
     {
         BattleCards.Game.players[p].myHand.Chief();
         Transform Hand = p == 0 ? GameObject.FindGameObjectWithTag("TotalHand").transform : GameObject.FindGameObjectWithTag("TotalHand2").transform;
-        
+
         for (int i = 0; i < Hand.childCount; i++)
         {
             Card temp = BattleCards.Game.players[p].myHand.Cards[i];
@@ -37,12 +37,12 @@ public class Game : MonoBehaviour
             {
                 Destroy(Hand.GetChild(i).GetChild(0).gameObject);
             }
-            if(temp != null)
+            if (temp != null)
             {
                 GameObject pp = Create.CreateCard(temp);
                 pp.transform.SetParent(Hand.GetChild(i));
                 pp.transform.position = Hand.GetChild(i).position;
-            
+
             }
         }
     }
@@ -58,12 +58,19 @@ public class Game : MonoBehaviour
         for (int i = 0; i < Algo.childCount; i++)
         {
             Card temp = BattleCards.Game.players[p].myField.myAlgorithm[i];
+
+
             if (Algo.GetChild(i).GetChild(1).childCount == 1)
             {
                 Destroy(Algo.GetChild(i).GetChild(1).GetChild(0).gameObject);
             }
-            if(temp != null)
+            if (temp != null)
             {
+                if ((temp as Algorithm).Resistance.life <= 0)
+                {
+                    temp = null;
+                    continue;
+                }
                 GameObject pp = Create.CreateCard(temp);
                 pp.transform.SetParent(Algo.GetChild(i).GetChild(1));
                 pp.transform.position = Algo.GetChild(i).GetChild(1).position;
@@ -76,7 +83,7 @@ public class Game : MonoBehaviour
             {
                 Destroy(Hack.GetChild(i).GetChild(0).GetChild(0).gameObject);
             }
-            if(temp != null)
+            if (temp != null)
             {
                 GameObject pp = Create.CreateCard(temp);
                 pp.transform.SetParent(Hack.GetChild(i).GetChild(0));

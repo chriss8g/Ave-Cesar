@@ -13,7 +13,7 @@ namespace BattleCards
         {
             for (int i = 0; i < field.Length(); i++)
             {
-                if (f(field[i]))
+                if (f(field[i], "Exist"))
                 {
                     return true;
                 }
@@ -31,7 +31,7 @@ namespace BattleCards
         {
             for (int i = 0; i < field.Length(); i++)
             {
-                if (!f(field[i]))
+                if (!f(field[i], "ForAll"))
                 {
                     return false;
                 }

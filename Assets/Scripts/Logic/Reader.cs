@@ -29,6 +29,7 @@ namespace BattleCards
                     {
                         return Game.players[(Game.turns) % 2].myLife.life;
                     }
+                    throw new SyntaxError();
                 }
 
             }
@@ -48,13 +49,12 @@ namespace BattleCards
             catch (System.Exception)
             {
                 return ReadInt(element);
-                throw new SyntaxError();
             }
         }
         /// <summary>
         /// convierte una cadena de texto en un predicado de tipo EXISTE o PARA TODO sobre los campos
         /// </summary>
-        /// <param name="info"Cadena de tecto></param>
+        /// <param name="info"Cadena de texto></param>
         /// <returns></returns>
         public static bool ReadBool(string info)
         {
@@ -118,17 +118,17 @@ namespace BattleCards
         /// </summary>
         /// <param name="info"></param>
         /// <returns>una funcion para filtrar las cartas</returns>
-        public static Filter CreateFilter(string info)
+        private static Filter CreateFilter(string info)
         {
             if (info.Contains("EmptySpace"))
             {
                 if (info.Contains("!="))
                 {
-                    return (Card card) => { return card != null; };
+                    return (Card card, string item) => { return card != null; };
                 }
                 else if (info.Contains("="))
                 {
-                    return (Card card) => { return card == null; };
+                    return (Card card, string item) => { return card == null; };
                 }
             }
             string[] elements = info.Split(' ');
@@ -138,15 +138,30 @@ namespace BattleCards
                 {
                     case "=":
                         {
-                            return (Card card) => { return (card as Algorithm).Resistance.life == Value(elements[2]); };
+                            return (Card card, string item) => { 
+                                if (card == null)
+                                {
+                                    return item == "ForAll";
+                                }
+                                return (card as Algorithm).Resistance.life == Value(elements[2]); };
                         }
                     case "<":
                         {
-                            return (Card card) => { return (card as Algorithm).Resistance.life < Value(elements[2]); };
+                            return (Card card, string item) => { 
+                                if (card == null)
+                                {
+                                    return item == "ForAll";
+                                }
+                                return (card as Algorithm).Resistance.life < Value(elements[2]); };
                         }
                     case ">":
                         {
-                            return (Card card) => { return (card as Algorithm).Resistance.life > Value(elements[2]); };
+                            return (Card card, string item) => { 
+                                if (card == null)
+                                {
+                                    return item == "ForAll";
+                                }
+                                return (card as Algorithm).Resistance.life > Value(elements[2]); };
                         }
                 }
             }
@@ -156,15 +171,30 @@ namespace BattleCards
                 {
                     case "=":
                         {
-                            return (Card card) => { return (card as Hacker).Capacity == Value(elements[2]); };
+                            return (Card card, string item) => { 
+                                if (card == null)
+                                {
+                                    return item == "ForAll";
+                                }
+                                return (card as Hacker).Capacity == Value(elements[2]); };
                         }
                     case "<":
                         {
-                            return (Card card) => { return (card as Hacker).Capacity < Value(elements[2]); };
+                            return (Card card, string item) => { 
+                                if (card == null)
+                                {
+                                    return item == "ForAll";
+                                }
+                                return (card as Hacker).Capacity < Value(elements[2]); };
                         }
                     case ">":
                         {
-                            return (Card card) => { return (card as Hacker).Capacity > Value(elements[2]); };
+                            return (Card card, string item) => { 
+                                if (card == null)
+                                {
+                                    return item == "ForAll";
+                                }
+                                return (card as Hacker).Capacity > Value(elements[2]); };
                         }
 
                 }

@@ -126,7 +126,7 @@ namespace BattleCards
         /// <param name="a"></param>
         /// <returns>true si la cantidad de parentesis despues de la posicion a es balanceada
         /// false en caso contrario</returns>
-        public static bool IsBalanced (string [] s, int a)
+        private static bool IsBalanced (string [] s, int a)
         {
             int cantop = 0;
             int cantclos = 0;
