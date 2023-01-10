@@ -67,7 +67,6 @@ Cuenta con cuatro campos a llenar:
 
 Estos efectos son elaborados a partir de funciones que el compilador es capaz de leer,
 las funciones a utilizar en cada caso son las siguientes:
-
         ![Acaso borró la imagen de la carpeta?](./tabla1.png)
   ![Acaso borró la imagen de la carpeta?](./tabla2.png)
 
